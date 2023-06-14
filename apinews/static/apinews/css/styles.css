@@ -142,6 +142,10 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 64rem;
 }
 
+.paginator {
+    text-align: center;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
 * {
