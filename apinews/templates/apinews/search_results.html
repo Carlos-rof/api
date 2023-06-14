@@ -1,5 +1,5 @@
 {% include 'partials/head.html' %}
-<body>
+<br>
   {% include 'partials/header.html' %}
   <h1 class="search-results-text">Search results for "{{ query }}":</h1>
   <ul>
@@ -12,11 +12,21 @@
             <p>{{ item.description }}</p>
           </li>
         {% empty %}
-        <li>Nenhum resultado encontrado.</li>
+        <li>No results found</li>
         {% endfor %}
       </ol>
     </div>
-    
   </ul>
+  <div class="paginator">
+    {% if page.has_previous %}
+      <a href="?q={{query}}&page=1">&laquo First</a>
+      <a href="?q={{query}}&page={{page.previous_page_number}}">Previous</a>
+    {% endif %}
+    Page {{page.number}} of {{page.paginator.num_pages}}
+    {% if page.has_next %}
+      <a href="?q={{query}}&page={{page.next_page_number}}">Next</a>
+      <a href="?q={{query}}&page={{page.paginator.num_pages}}">Last &raquo</a>
+    {% endif %}
+  </div>
 </body>
 </html>
