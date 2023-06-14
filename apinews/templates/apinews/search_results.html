@@ -3,12 +3,20 @@
   {% include 'partials/header.html' %}
   <h1 class="search-results-text">Search results for "{{ query }}":</h1>
   <ul>
-    <ol style="--length: 5" role="list">
-      <li style="--i: 0">
-        <h3>Discovery and assessment</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing diam donec adipiscing tristique risus.</p>
-      </li>
-    </ol>
+    <div class="main-content-list">
+      <ol style="--length: 5" role="list">
+        {% for item in results %}
+          <li style="--i: 1"  class="content-list">
+            <h3>{{ item.title }}</h3>
+            <h4>{{ item.author }}</h4>
+            <p>{{ item.description }}</p>
+          </li>
+        {% empty %}
+        <li>Nenhum resultado encontrado.</li>
+        {% endfor %}
+      </ol>
+    </div>
+    
   </ul>
 </body>
 </html>
