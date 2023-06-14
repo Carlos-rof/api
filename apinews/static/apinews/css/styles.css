@@ -132,6 +132,15 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.main-content-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--spacing-gutter-large)
+}
+
+.content-list {
+    max-width: 64rem;
+}
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
